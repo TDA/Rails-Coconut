@@ -1,7 +1,8 @@
 class Seat < ActiveRecord::Base
-  def validate
-    if (name == flight_id)
-      errors.add_to_base("Your name is the same as the flight number")
-    end
+  belongs_to :flight
+  validate :baggage_in_limits
+
+  def baggage_in_limits
+    errors.add(:baggage, message: "cannot be greater than limit") if baggage > flight.baggage_allowance
   end
 end
