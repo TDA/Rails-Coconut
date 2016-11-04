@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'snacks/new'
+
+  get 'snacks/list'
+
+  get 'snacks/show'
+
   resources :seats
   resources :flights
   # The priority is based upon order of creation: first created -> highest priority.

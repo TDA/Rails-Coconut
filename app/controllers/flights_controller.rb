@@ -56,7 +56,7 @@ class FlightsController < ApplicationController
   def destroy
     @flight.destroy
     respond_to do |format|
-      format.html { redirect_to flights_url, notice: 'Flight was successfully destroyed.' }
+      format.html { redirect_to flights_url, notice: 'Flight was successfully deleted.' }
       format.json { head :no_content }
     end
   end
